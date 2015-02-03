@@ -12,4 +12,7 @@
 *.pyc
 
 #settings
-m_hero/m_hero/settings.py
+settings.py
+
+#db
+db_repository/
