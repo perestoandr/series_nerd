@@ -4,8 +4,7 @@ import json, math
 
 @app.route('/')
 def index():
-    phrases = models.Phrases.query.order_by(-models.Phrases.id).all()
-    return render_template("main/index.html", phrases=phrases)
+    return render_template("main/index.html")
 
 @app.route('/page')
 def page():
