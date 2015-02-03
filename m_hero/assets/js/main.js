@@ -20,7 +20,7 @@ var template = '<div class="corgi_feed_well"> \
                       <div class="feed_body"> \
                         <div class="row"> \
                           <div class="feed_profile_pic"> \
-                            <img src="assets/img/nerd.jpg" alt="meta image" class="meta_image"> \
+                            <img src="assets/img/nerd_little.jpg" alt="meta image" class="meta_image"> \
                           </div> \
                           <div class="feed_text"> \
                             <p><%this.text%></p> \
