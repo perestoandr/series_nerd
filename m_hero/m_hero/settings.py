@@ -9,7 +9,7 @@ SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 N = 2
 
 #twitter
-CONSUMER_KEY = 'xxx'
-CONSUMER_SECRET = 'xxx'
-ACCESS_TOKEN = 'xxx'
-ACCESS_TOKEN_SECRET = 'xxx'
+CONSUMER_KEY = 'xxxx'
+CONSUMER_SECRET = 'xxxx'
+ACCESS_TOKEN = 'xxxx'
+ACCESS_TOKEN_SECRET = 'xxxx'
