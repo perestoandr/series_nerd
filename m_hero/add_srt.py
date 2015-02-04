@@ -28,8 +28,13 @@ def main():
         print('no argumets - nothing to do')
     else:
         for path in listdir(argv[1]):
-            if path[len(path)-4:] == '.srt':
-                save_srt_to_db(argv[1] + '/' + path)
+            if path[-4] != '.':
+                for p in listdir(path):
+                    if path[len(path)-4:] == '.srt':
+                        save_srt_to_db(argv[1] + '/' + path + '/' + p)
+            else:
+                if path[len(path)-4:] == '.srt':
+                    save_srt_to_db(argv[1] + '/' + path)
 
 if __name__ == '__main__':
     main()
