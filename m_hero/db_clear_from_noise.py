@@ -6,6 +6,15 @@ def clear():
     srt = models.Srt.query.all()
     words = models.UpperWords.query.all()
 
+    for word in words:
+        word.word = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', word.word)
+        try:
+            db.session.commit()
+        except:
+            db.session.rollback()
+            db.session.delete(word)
+            db.session.commit()
+
     for phrase in phrases:
         phrase.phrase = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', phrase.phrase)
 
@@ -13,8 +22,6 @@ def clear():
         s.set_of_words = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', s.set_of_words)
         s.list_of_words = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', s.list_of_words)
 
-    for word in words:
-        word.word = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', word.word)
     try:
         db.session.commit()
     except:
