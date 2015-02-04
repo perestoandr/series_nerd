@@ -7,7 +7,7 @@ def clear():
     words = models.UpperWords.query.all()
 
     for word in words:
-        word.word = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', word.word)
+        word.word = re.sub(r'[^A-Za-z0-9\!\?\.\,\s]', '', word.word)
         try:
             db.session.commit()
         except:
@@ -16,11 +16,11 @@ def clear():
             db.session.commit()
 
     for phrase in phrases:
-        phrase.phrase = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', phrase.phrase)
+        phrase.phrase = re.sub(r'[^A-Za-z0-9\!\?\.\,\s]', '', phrase.phrase)
 
     for s in srt:
-        s.set_of_words = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', s.set_of_words)
-        s.list_of_words = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', s.list_of_words)
+        s.set_of_words = re.sub(r'[^A-Za-z0-9\!\?\.\,\s]', '', s.set_of_words)
+        s.list_of_words = re.sub(r'[^A-Za-z0-9\!\?\.\,\s]', '', s.list_of_words)
 
     try:
         db.session.commit()
