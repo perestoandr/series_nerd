@@ -15,8 +15,10 @@ def clear():
 
     for word in words:
         word.word = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', word.word)
-
-    db.session.commit()
+    try:
+        db.session.commit()
+    except:
+        db.session.rollback()
 
 if __name__ == '__main__':
     clear()
