@@ -10,6 +10,7 @@ def save_srt_to_db(path):
             line = line.rstrip()
             if not (re.match('[XYxy{}0-9:,>\s-]+$', line) or re.match('<', line)):
                 text += line + ' '
+    text = re.sub(r'[^A-Za-z0-9\!\?\.\,]', '', text)
     for word in text.split():
         if word[0].isupper():
             try:
