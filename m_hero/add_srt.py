@@ -8,7 +8,7 @@ def save_srt_to_db(path):
     with open(path) as f:
         for line in f:
             line = line.rstrip()
-            if not (re.match('[XYxy{}0-9:,>\s-]+$', line) or re.match('<', line)):
+            if not (re.match('[XYxy{}0-9:,>\s-]+$', line) or re.match('[\[\<]', line)):
                 text += line + ' '
     text = re.sub(r"[^A-Za-z0-9\!\?\.\,\s\']", '', text)
     for word in text.split():
