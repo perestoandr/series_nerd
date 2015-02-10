@@ -103,7 +103,7 @@ $(document).ready(function () {
     update();
     //next pages
     $(document).scroll(function() {
-        if ((page < pages) && ($(document).scrollTop() + $(window).height() + 300 <= $(document).height())){
+        if ((page < pages) && ($(document).scrollTop() + $(window).height() + 300 >= $(document).height())){
             next_page();
         }
     });
