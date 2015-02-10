@@ -35,9 +35,11 @@ var template = '<div class="corgi_feed_well"> \
     count,
     pages = 0,
     seconds = 25000,
-    difference = 0;
+    difference = 0,
+    downloading = false;
 
 function next_page(){
+    downloading = true
     $.ajax({
         url: '/page',
         type: 'GET',
@@ -57,6 +59,7 @@ function next_page(){
             page +=1;
             count = data.count;
             pages = data.pages;
+            downloading = false;
         }
     });
 };
@@ -103,7 +106,7 @@ $(document).ready(function () {
     update();
     //next pages
     $(document).scroll(function() {
-        if ((page < pages) && ($(document).scrollTop() + $(window).height() + 300 >= $(document).height())){
+        if ((page < pages) && ($(document).scrollTop() + $(window).height() + 300 >= $(document).height()) && !downloading){
             next_page();
         }
     });
