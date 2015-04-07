@@ -8,4 +8,4 @@ Tech stack:
   - PostgreSQL (you may use any other. For it you should fix random function in [controllers.py](https://github.com/tenoclock/series_nerd/blob/master/m_hero/apps/main/controllers.py))
 
 
-You may see, how it works at [series-nerd.com](https://series-nerd.com) or Twitter [@series_nerd](https://twitter.com/series_nerd)
+You may see, how it works at [series-nerd.com](http://series-nerd.com) or Twitter [@series_nerd](https://twitter.com/series_nerd)
